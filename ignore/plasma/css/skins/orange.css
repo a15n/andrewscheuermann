@@ -1,0 +1,74 @@
+a, 
+.navMenu > li.current > a,
+.navMenu > li > a:hover,
+.navMenu > li.sfHover > a,
+.navMenu > li.current > a,
+.colDefault, .divider .icon,
+.progress-skill-bar .lable,
+.accordion-heading .accordion-toggle.active,
+.accordion-heading .accordion-toggle:hover,
+.view span.zoom,
+.mail > a, .web > a, .follow > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus,
+.servContent:hover h4, 
+.bottom-icons li a:hover,
+.list_carousel ul li h5:hover,
+.newsDetil span a{ 
+	color: #f1c40f !important;
+}
+.navMenu > li > a, .nav-tabs > li > a, .testio > a:hover, .myTeam .photoTeam .socialTeam ul li a:hover, span.tweet_text a:hover, .mail > a:hover, .web > a:hover, .follow > a:hover, .newsDetil span a:hover{
+	color: #2c3e50 !important;
+}
+
+li.backLava{
+	border-bottom: 3px solid #f1c40f; }
+li.backLava:before {
+	border-bottom-color: #f1c40f;
+}
+
+.btn.btn-primary,
+.blogs a.icon.zoom,
+.pagination ul li > a:hover,
+.pagination ul li > span:hover,
+.pagination ul li > a :focus,
+.pagination ul li > span :focus,
+.tp-caption.plasma_def,
+.myTeam .photoTeam .socialTeam ul,
+.list_item:hover .portfolio_details {
+    background-color: #f1c40f !important;
+}
+
+.titleContent h6 span, .contact_info.span6 h6 span {
+    border-bottom: 3px solid #f1c40f !important;
+}
+.progress .bar, .default, .myTeam .profPeople:hover .info, .myTeam .photo .socialTeam ul, list_item:hover .portfolio_details {
+    background: none repeat scroll 0 0 #f1c40f !important;
+}
+#filter li.selected a, #filter li a:hover {
+    background-color: #f1c40f !important;
+    border: 1px solid #f1c40f !important;
+}
+.descSubscribe i {
+    color: #f39c12;
+}
+
+.btn.btn-primary:hover{
+  background-color: #F9CB13 !important;
+}
+.myTeam .photoTeam .socialTeam ul li a, .accordion-heading .accordion-toggle, .btn, .testio > a, #filter li.selected a, #filter li a:hover, .descSubscribe > h5, .descSubscribe > p, .pagination ul li > a, .pagination ul li > span{
+	color: #fff !important
+
+}
+span.tweet_text a{
+	color: #ecf0f1 !important
+}
+.bottom-icons li a{
+	color: #bdc3c7 !important;
+}
+.blogs a.icon.zoom:hover{
+	background-color: #fff !important;
+}
+.newsDetil span a{
+	color: #95a5a6 !important;
+}
