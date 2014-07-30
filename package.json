@@ -1,7 +1,7 @@
 {
   "name": "andrewscheuermann",
   "version": "0.0.0",
-  "description": "",
+  "description": "Personal Site",
   "main": "web.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,9 +10,27 @@
   "license": "ISC",
   "devDependencies": {
     "express": "^4.7.2",
-    "logfmt": "^1.1.2"
+    "logfmt": "^1.1.2",
+    "matchdep": "^0.1.1",
+    "grunt": "^0.4.0",
+    "grunt-regarde": "^0.1.1",
+    "grunt-contrib-connect":  "^0.1.2",
+    "grunt-contrib-livereload": "^0.1.1",
+    "grunt-open": "^0.2.0"
   },
   "engines": {
     "node": "^0.10.28"
-  }
+  },
+  "dependencies": {
+    "express": "^4.7.2",
+    "logfmt": "^1.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrewscheuermann/andrewscheuermann.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewscheuermann/andrewscheuermann/issues"
+  },
+  "homepage": "https://github.com/andrewscheuermann/andrewscheuermann"
 }
