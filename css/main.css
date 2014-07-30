@@ -93,6 +93,7 @@ h2 {
     text-decoration: underline;
 }
 
+
 .loading {
 	background: url('../img/ico_loading.gif') no-repeat top center;
 }
@@ -142,8 +143,7 @@ main {
         position: relative;
     }
     .hsContent h2  {
-        color: #fff8de;
-        background-color: rgba(0,0,0,0.5);
+        color: #ffffff;
         padding: 10px 5px;
         font-size: 20px;
         line-height: 23px;
@@ -163,8 +163,7 @@ main {
 	#slide-3 .bcg {background-image:url('../img/bcg_slide-3.jpg')}
 	/*#slide-3 .hsContent {}*/
     #slide-3 h2 {
-        color: #f2ead6;
-        background-color: rgba(0,0,0,0.6);
+        color: #ffffff;
     }
 
 	/* Slide 4 */
@@ -360,9 +359,17 @@ main {
         text-align: left;
         padding: 0;
     }
-        .hsContent h2  {
-            font-size: 35px;
-            line-height: 38px;
+        .hsContent h2 {
+            font-size: 50px;
+            line-height: 54px;
+            font-family: 'Raleway', sans-serif !important;
+            font-weight: bold;
+        }
+        #information p {
+            font-size: 40px;
+            line-height: 44px;
+            font-family: 'Raleway', sans-serif !important;
+            font-weight: 200;
         }
     /*#slide-1 .hsContent {
         bottom: 200px;
@@ -377,9 +384,10 @@ main {
         top: auto;
         position: fixed;
         top: 60%;
-        right: 25%;
+        right: 5%;
         bottom: 20%;
         left: 25%;
+        text-align: right;
     }
     /*#slide-3 .hsContent {
         margin-left: -300px;
@@ -387,53 +395,53 @@ main {
     #slide-3 h2 {
         top: auto;
         position: fixed;
-        top: 60%;
-        right: 25%;
-        bottom: 20%;
-        left: 25%;
+        top: 40%;
+        right: 5%;
+        bottom: 40%;
+        left: 40%;
+        text-align: right;
     }
-    /*#slide-4 .hsContent {
-        margin-left: -340px;
-        position: fixed;
-    }*/
     #slide-4 h2 {
         top: auto;
         position: fixed;
-        top: 60%;
-        right: 25%;
-        bottom: 20%;
-        left: 25%;
+        top: 66%;
+        right: 10%;
+        bottom: 30%;
+        left: 5%;
+        text-align: left;
     }
     #slide-5 h2 {
         top: auto;
         position: fixed;
-        top: 60%;
-        right: 25%;
-        bottom: 20%;
-        left: 25%;
+        top: 61%;
+        right: 5%;
+        bottom: 30%;
+        left: 30%;
+        text-align: right;
     }
     #slide-6 h2 {
         top: auto;
         position: fixed;
-        top: 60%;
-        right: 25%;
-        bottom: 20%;
-        left: 25%;
+        top: 66%;
+        right: 15%;
+        bottom: 30%;
+        left: 5%;
+        text-align: left;
     }
     #slide-7 h2 {
         top: auto;
         position: fixed;
-        top: 60%;
-        right: 25%;
+        top: 15%;
+        right: 40%;
         bottom: 20%;
-        left: 25%;
+        left: 5%;
     }
     #slide-8 #information {
         top: auto;
         position: fixed;
-        top: 50%;
+        top: 20%;
         right: 0%;
-        bottom: 25%;
+        bottom: 10%;
         left: 0%;
     }
 
