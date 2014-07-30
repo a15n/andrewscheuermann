@@ -77,19 +77,24 @@ textarea {
 body, html {
 	height: 100%;
 	min-height: 100%;
-	background-color: #000000; /* Stav this */
+	background-color: #000000;
 }
 body {
 
 }
 .no-js {
-	padding-top: 106px; /*Stav this*/
+	padding-top: 106px;
 }
 h2 {
 	margin-top: 0;
 }
+
+.header {
+    text-decoration: underline;
+}
+
 .loading {
-	background: url('../img/ico_loading.gif') no-repeat center center;
+	background: url('../img/ico_loading.gif') no-repeat top center;
 }
 section {
     opacity: 0;
@@ -144,14 +149,6 @@ main {
         line-height: 23px;
         margin-bottom: 12px;
     }
-    .hsContent p {
-        width: 80%;
-        color: #b2b2b2;
-    }
-	.hsContent a {
-		color: #b2b2b2;
-		text-decoration: underline;
-	}
 
 	/* Slide 1 */
 	#slide-1 .bcg {background-image:url('../img/bcg_slide-1.jpg')}
@@ -367,18 +364,15 @@ main {
             font-size: 35px;
             line-height: 38px;
         }
-        .hsContent p {
-            width: 400px;
-        }
     /*#slide-1 .hsContent {
         bottom: 200px;
         top: auto;
         margin-left: -80px;
     }*/
-    /*#slide-2 .hsContent {
-        margin-left: -340px;
-        top: auto;
-    }*/
+    #slide-2 .hsContent {
+    /*    margin-left: -340px;*/
+     /*   top: auto;*/
+    }
     #slide-2 h2 {
         top: auto;
         position: fixed;
@@ -434,13 +428,13 @@ main {
         bottom: 20%;
         left: 25%;
     }
-    #slide-8 h2 {
+    #slide-8 #information {
         top: auto;
         position: fixed;
-        top: 60%;
-        right: 25%;
-        bottom: 20%;
-        left: 25%;
+        top: 50%;
+        right: 0%;
+        bottom: 25%;
+        left: 0%;
     }
 
 }
