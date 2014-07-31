@@ -376,10 +376,21 @@ main {
         top: auto;
         margin-left: -80px;
     }*/
-    #slide-2 .hsContent {
-    /*    margin-left: -340px;*/
-     /*   top: auto;*/
+
+    #slide-1 h2 {
+        top: auto;
+        position: fixed;
+        top: 25%;
+        right: 40%;
+        bottom: 20%;
+        left: 5%;
+        color: rgba(14, 37, 51,1) !important;
+        text-align: left;
+        font-height: 45px;
+        font-weight: bold !important;
+        /*background-color: rgba(214, 75, 122, 1);*/
     }
+
     #slide-2 h2 {
         top: auto;
         position: fixed;
