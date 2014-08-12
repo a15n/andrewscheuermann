@@ -6,13 +6,48 @@ module.exports = function(grunt) {
   // Configure Grunt
   grunt.initConfig({
 
+    // copy: {
+    //   dist: {
+    //     cwd: 'src/',
+    //     expand: true,
+    //     src: '**',
+    //     dest: 'dist/'
+    //   }
+    // },
+    // // Remove unused CSS across multiple files, compressing the final output
+    // uncss: {
+    //   dist: {
+    //     files: [
+    //       { src: '*.html', dest: 'dist/css/compiled.min.css'}
+    //     ]
+    //   },
+    //   options: {
+    //     compress:true
+    //   }
+    // },
+    // processhtml: {
+    //   dist: {
+    //     files: {
+    //       'dist/index.html': ['index.html']
+    //     }
+    //   }
+    // },
+    // uglify: {
+    //   dist: {
+    //     files: {
+    //       'dist/js/compiled.min.js': ['js/vendor/*.js','js/*.js']
+    //       // make sure we load jQuery first
+    //     }
+    //   }
+    // },
+
     // grunt-contrib-connect will serve the files of the project
     // on specified port and hostname
     connect: {
       all: {
         options:{
           port: 9000,
-          hostname: "0.0.0.0",
+          hostname: '0.0.0.0',
           // No need for keepalive anymore as watch will keep Grunt running
           //keepalive: true,
 
@@ -53,18 +88,27 @@ module.exports = function(grunt) {
         tasks: ['livereload']
       }
     }
+
   });
 
-  // Creates the `server` task
-  grunt.registerTask('server',[
+  // Creates the 'server' task
+  grunt.registerTask('serve',['livereload-start', 'connect', 'open', 'regarde']);
 
-    // Starts the livereload server to which the browser will connect to
-    // get notified of when it needs to reload
-    'livereload-start',
-    'connect',
-    // Connect is no longer blocking other tasks, so it makes more sense to open the browser after the server starts
-    'open',
-    // Starts monitoring the folders and keep Grunt alive
-    'regarde'
-  ]);
+  // Creates the 'build' task
+  // grunt.registerTask('build', ['copy', 'processhtml', 'uncss', 'uglify']);
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
