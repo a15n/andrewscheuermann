@@ -5,7 +5,37 @@ module.exports = function(grunt) {
 
   // Configure Grunt
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
+    concat: {
+      options: {
+        separator: ';'
+      },
+      dist: {
+        src: ['js/**/*.js'],
+        dest: 'dist/<%= pkg.name %>.js'
+      }
+    },
+    uglify: {
+      options: {
+        // the banner is inserted at the top of the output
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      dist: {
+        files: {
+          'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+        }
+      }
+    },
+    imagemin: {                          // Task
+      dynamic: {                         // Another target
+        files: [{
+          expand: true,                  // Enable dynamic expansion
+          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+          dest: 'dist/'                  // Destination path prefix
+        }]
+      }
+    },
     // copy: {
     //   dist: {
     //     cwd: 'src/',
@@ -29,14 +59,6 @@ module.exports = function(grunt) {
     //   dist: {
     //     files: {
     //       'dist/index.html': ['index.html']
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       'dist/js/compiled.min.js': ['js/vendor/*.js','js/*.js']
-    //       // make sure we load jQuery first
     //     }
     //   }
     // },
@@ -93,6 +115,9 @@ module.exports = function(grunt) {
 
   // Creates the 'server' task
   grunt.registerTask('serve',['livereload-start', 'connect', 'open', 'regarde']);
+
+  // Andrew's 'test' task
+  grunt.registerTask('test', ['concat', 'uglify', 'imagemin']);
 
   // Creates the 'build' task
   // grunt.registerTask('build', ['copy', 'processhtml', 'uncss', 'uglify']);
