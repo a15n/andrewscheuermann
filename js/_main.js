@@ -83,4 +83,5 @@
 	enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false)
 	        .listen(100);
 
+
 } )( jQuery );

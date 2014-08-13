@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['js/**/*.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        dest: 'dist/js/<%= pkg.name %>.js'
       }
     },
     uglify: {
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       dynamic: {                         // Another target
         files: [{
           expand: true,                  // Enable dynamic expansion
-          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+          src: ['img/*.{png,jpg,gif}'],   // Actual patterns to match
           dest: 'dist/'                  // Destination path prefix
         }]
       }
@@ -60,6 +60,15 @@ module.exports = function(grunt) {
         ]
       }
     },
+    cssmin: {
+      minify: {
+        expand: true,
+        cwd: 'dist/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'dist/css/',
+        ext: '.min.css'
+      }
+    },
     // // Remove unused CSS across multiple files, compressing the final output
     // uncss: {
     //   dist: {
@@ -71,13 +80,13 @@ module.exports = function(grunt) {
     //     compress:true
     //   }
     // },
-    // processhtml: {
-    //   dist: {
-    //     files: {
-    //       'dist/index.html': ['index.html']
-    //     }
-    //   }
-    // },
+    processhtml: {
+      dist: {
+        files: {
+          'dist/index.html': ['index.html']
+        }
+      }
+    },
 
     // grunt-contrib-connect will serve the files of the project
     // on specified port and hostname
@@ -132,7 +141,6 @@ module.exports = function(grunt) {
   //     console.log('tried dist');
   //     return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
   //   }
-
   //   grunt.task.run([
   //     'livereload-start',
   //     'connect',
@@ -141,15 +149,15 @@ module.exports = function(grunt) {
   //   ]);
   // });
 
-  // Andrew's 'test' task
+  // Andrew's 'build' task
   grunt.registerTask('build', [
     'clean:dist',
-    'copy'
+    'copy',
     // 'concat',
-    // 'imagemin',
+    // 'imagemin', // dis works
+    'processhtml',
+    'cssmin',
+    // 'uncss',
     // 'uglify'
   ]);
-
-  // Creates the 'build' task
-  // grunt.registerTask('build', ['copy', 'processhtml', 'uncss', 'uglify']);
 };
