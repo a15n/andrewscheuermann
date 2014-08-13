@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    imagemin: {                          // Task
+    imagemin: {
       dynamic: {                         // Another target
         files: [{
           expand: true,                  // Enable dynamic expansion
@@ -36,14 +36,30 @@ module.exports = function(grunt) {
         }]
       }
     },
-    // copy: {
-    //   dist: {
-    //     cwd: 'src/',
-    //     expand: true,
-    //     src: '**',
-    //     dest: 'dist/'
-    //   }
-    // },
+    clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            'dist/*',
+            '!.git*',
+            '!dist/.git*'
+          ]
+        }]
+      }
+    },
+    copy: {
+      main: {
+        files: [
+          // includes files within path and its sub-directories
+          {
+            expand: true,
+            src: ['**', '!**/node_modules/**', '!**/dist/**'],
+            dest: 'dist/'
+          },
+        ]
+      }
+    },
     // // Remove unused CSS across multiple files, compressing the final output
     // uncss: {
     //   dist: {
@@ -70,8 +86,6 @@ module.exports = function(grunt) {
         options:{
           port: 9000,
           hostname: '0.0.0.0',
-          // No need for keepalive anymore as watch will keep Grunt running
-          //keepalive: true,
 
           // Livereload needs connect to insert a cJavascript snippet
           // in the pages it serves. This requires using a custom connect middleware
@@ -91,6 +105,7 @@ module.exports = function(grunt) {
       }
     },
 
+
     // grunt-open will open your browser at the project's URL
     open: {
       all: {
@@ -99,14 +114,10 @@ module.exports = function(grunt) {
       }
     },
 
-    // grunt-regarde monitors the files and triggers livereload
-    // Surprisingly, livereload complains when you try to use grunt-contrib-watch instead of grunt-regarde
     regarde: {
       all: {
-        // This'll just watch the index.html file, you could add **/*.js or **/*.css
-        // to watch Javascript and CSS files too.
+        // files:['index.html', '**/*.css', '**/*.js'],
         files:['index.html'],
-        // This configures the task that will run when the file change
         tasks: ['livereload']
       }
     }
@@ -116,24 +127,29 @@ module.exports = function(grunt) {
   // Creates the 'server' task
   grunt.registerTask('serve',['livereload-start', 'connect', 'open', 'regarde']);
 
+  // grunt.registerTask('serve', function (target) {
+  //   if (target === 'dist') {
+  //     console.log('tried dist');
+  //     return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
+  //   }
+
+  //   grunt.task.run([
+  //     'livereload-start',
+  //     'connect',
+  //     'open',
+  //     'regarde'
+  //   ]);
+  // });
+
   // Andrew's 'test' task
-  grunt.registerTask('test', ['concat', 'uglify', 'imagemin']);
+  grunt.registerTask('build', [
+    'clean:dist',
+    'copy'
+    // 'concat',
+    // 'imagemin',
+    // 'uglify'
+  ]);
 
   // Creates the 'build' task
   // grunt.registerTask('build', ['copy', 'processhtml', 'uncss', 'uglify']);
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
