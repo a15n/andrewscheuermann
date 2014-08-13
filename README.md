@@ -1,10 +1,10 @@
 Personal Site
 =========
-This is [my personal site](http://andrewscheuermann.com/). I'm awesome. Hire me.
+This is [my personal site](http://andrewscheuermann.com/). I'm pretty awesome.
 
 Primary Features
 ---------
-* **Parralax Scrolling**: The landing page features parralex scrolling and is a visual representation of my resume and my story of how I got involved with coding.Big thank you to [Petr Tichy](http://ihatetomatoes.net/simple-parallax-scrolling-tutorial/) for the parralax scrolling tutorial.
+* **Parralax Scrolling**: The landing page features parralex scrolling and is a visual representation of my resume and the story of how I became a software engineer. Big credit to [Petr Tichy](http://ihatetomatoes.net/simple-parallax-scrolling-tutorial/) for the parralax scrolling tutorial.
 ```
 <!-- HTML -->
 <section id="slide-7" class="homeSlide">
