@@ -50,20 +50,19 @@ module.exports = function(grunt) {
       }
     },
     cssmin: {
-      minify: {
-        expand: true,
-        cwd: 'dist/css/',
-        src: ['*.css', '*.min.css'],
-        dest: 'dist/css'
+      combine: {
+        files: {
+          'dist/css/tidymin.css': ['dist/css/bootstrap.css', 'dist/css/normalize.css']
+        }
       }
     },
-    // uncss: {
-    //   dist: {
-    //     files: {
-    //       'dist/css/tidymin.css': ['dist/index.html']
-    //     }
-    //   }
-    // },
+    uncss: {
+      dist: {
+        files: {
+          'dist/css/tidymin.css': ['dist/index.html']
+        }
+      }
+    },
     processhtml: {
       dist: {
         files: {
@@ -124,14 +123,15 @@ module.exports = function(grunt) {
     'clean:dist',
     'copy',
     'imagemin',
-    'processhtml',
+    'uncss',
     'cssmin',
-    // 'concat',
-  ]);
-
-  grunt.registerTask('sadie', [
+    'processhtml',
 
   ]);
+
+  // grunt.registerTask('sadie', [
+  //   'cssmin'
+  // ]);
 
 
 
