@@ -6,16 +6,20 @@ module.exports = function(grunt) {
   // Configure Grunt
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-    // concat: {
-    //   options: {
-    //     separator: ';'
-    //   },
-    //   dist: {
-    //     src: ['js/**/*.js'],
-    //     dest: 'dist/js/<%= pkg.name %>.js'
-    //   }
-    // },
+    // https://github.com/gruntjs/grunt-contrib-concat#usage-examples
+    concat: {
+      dist: {
+        src: [
+          'js/vendor/jquery-1.9.1.min.js',
+          'js/vendor/modernizr-2.7.1.min.js',
+          'js/imagesloaded.js',
+          'js/enquire.min.js',
+          'js/skrollr.js',
+          'js/_main.js'
+        ],
+        dest: 'dist/js/final.js'
+      }
+    },
     imagemin: {
       dynamic: {
         files: [{
@@ -53,6 +57,13 @@ module.exports = function(grunt) {
       combine: {
         files: {
           'dist/css/tidymin.css': ['dist/css/bootstrap.css', 'dist/css/normalize.css']
+        }
+      }
+    },
+    uglify: {
+      my_target: {
+        files: {
+          'dist/js/final.js': ['dist/js/final.js']
         }
       }
     },
@@ -126,12 +137,12 @@ module.exports = function(grunt) {
     'uncss',
     'cssmin',
     'processhtml',
-
+    'concat',
   ]);
 
-  // grunt.registerTask('sadie', [
-  //   'cssmin'
-  // ]);
+  grunt.registerTask('sadie', [
+    'uglify'
+  ]);
 
 
 
