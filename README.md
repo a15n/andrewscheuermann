@@ -35,4 +35,9 @@ Primary Features
   left: 5%;
 }
 ```
+* **Optimized Client-Side Performance**: After initially building the site I used [Grunt](http://gruntjs.com/) to reduce the page size from 13.9MB to 4.6MB **(a 67% reduction)** and decrease the load time from 7 seconds to 2.5 seconds **(a 64% reduction)**, both of which were measured before caching. Screenshots of the network tab are included below. I personally crafted my `grunt build` process and have included the code below the images.
+INSERT IMAGES HERE
+```
+
+```
 

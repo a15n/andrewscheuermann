@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(grunt) {
 
   // Load Grunt tasks declared in the package.json file
@@ -5,8 +7,33 @@ module.exports = function(grunt) {
 
   // Configure Grunt
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    // https://github.com/gruntjs/grunt-contrib-concat#usage-examples
+
+    clean: {
+      begin: {
+        files: [{
+          dot: true,
+          src: [
+            'dist/*',
+            '!dist/.git*'
+          ]
+        }]
+      },
+      end: {
+        files: [{
+          dot: true,
+          src: [
+            'dist/css/bootstrap.css',
+            'dist/css/main.css',
+            'dist/css/normalize.css',
+            'dist/js/vendor',
+            'dist/js/_main.js',
+            'dist/js/enquire.min.js',
+            'dist/js/imagesloaded.js',
+            'dist/js/skrollr.js',
+          ]
+        }]
+      }
+    },
     concat: {
       dist: {
         src: [
@@ -20,6 +47,51 @@ module.exports = function(grunt) {
         dest: 'dist/js/final.js'
       }
     },
+    connect: {
+      all: {
+        options:{
+          port: 9000,
+          hostname: '0.0.0.0',
+          middleware: function(connect, options) {
+            return [
+              require('grunt-contrib-livereload/lib/utils').livereloadSnippet,
+              connect.static(options.base)
+            ];
+          }
+        }
+      }
+    },
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true,
+            src: ['**', '!**/node_modules/**', '!**/dist/**', '!Gruntfile.js', '!README.md', '!TODO.md'],
+            dest: 'dist/'
+          },
+        ]
+      }
+    },
+    cssmin: {
+      combine: {
+        files: {
+          'dist/css/tidymin.css': ['dist/css/bootstrap.css', 'dist/css/normalize.css', 'dist/css/main.css']
+        }
+      }
+    },
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true,
+          useShortDoctype: true,
+          minifyJS: true
+        },
+        files: {
+          'dist/index.html': 'dist/index.html'
+        }
+      }
+    },
     imagemin: {
       dynamic: {
         files: [{
@@ -29,35 +101,22 @@ module.exports = function(grunt) {
         }]
       }
     },
-    clean: {
+    open: {
+      all: {
+        path: 'http://localhost:<%= connect.all.options.port%>'
+      }
+    },
+    processhtml: {
       dist: {
-        files: [{
-          dot: true,
-          src: [
-            'dist/*',
-            '!.git*',
-            '!dist/.git*'
-          ]
-        }]
-      }
-    },
-    copy: {
-      main: {
-        files: [
-          // includes files within path and its sub-directories
-          {
-            expand: true,
-            src: ['**', '!**/node_modules/**', '!**/dist/**'],
-            dest: 'dist/'
-          },
-        ]
-      }
-    },
-    cssmin: {
-      combine: {
         files: {
-          'dist/css/tidymin.css': ['dist/css/bootstrap.css', 'dist/css/normalize.css']
+          'dist/index.html': ['index.html']
         }
+      }
+    },
+    regarde: {
+      all: {
+        files:['index.html', 'css/**/*.css', 'js/**/*.js'],
+        tasks: ['livereload']
       }
     },
     uglify: {
@@ -73,55 +132,10 @@ module.exports = function(grunt) {
           'dist/css/tidymin.css': ['dist/index.html']
         }
       }
-    },
-    processhtml: {
-      dist: {
-        files: {
-          'dist/index.html': ['index.html']
-        }
-      }
-    },
-    connect: {
-      all: {
-        options:{
-          port: 9000,
-          hostname: '0.0.0.0',
-
-          // Livereload needs connect to insert a cJavascript snippet
-          // in the pages it serves. This requires using a custom connect middleware
-          middleware: function(connect, options) {
-
-            return [
-
-              // Load the middleware provided by the livereload plugin
-              // that will take care of inserting the snippet
-              require('grunt-contrib-livereload/lib/utils').livereloadSnippet,
-
-              // Serve the project folder
-              connect.static(options.base)
-            ];
-          }
-        }
-      }
-    },
-    open: {
-      all: {
-        // Gets the port from the connect configuration
-        path: 'http://localhost:<%= connect.all.options.port%>'
-      }
-    },
-
-    regarde: {
-      all: {
-        // files:['index.html', '**/*.css', '**/*.js'],
-        files:['index.html'],
-        tasks: ['livereload']
-      }
     }
-
   });
 
-  // Creates the 'server' task
+  // Creates the 'serve' task
   grunt.registerTask('serve',[
     'livereload-start',
     'connect',
@@ -131,19 +145,20 @@ module.exports = function(grunt) {
 
   // Creates the 'build' task
   grunt.registerTask('build', [
-    'clean:dist',
+    'clean:begin',
     'copy',
     'imagemin',
     'uncss',
     'cssmin',
     'processhtml',
     'concat',
+    'htmlmin',
+    'clean:end'
   ]);
 
-  grunt.registerTask('sadie', [
-    'uglify'
+  // Creates the 'test' task
+  grunt.registerTask('test', [
+
   ]);
-
-
 
 };
