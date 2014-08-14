@@ -7,32 +7,21 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    concat: {
-      options: {
-        separator: ';'
-      },
-      dist: {
-        src: ['js/**/*.js'],
-        dest: 'dist/js/<%= pkg.name %>.js'
-      }
-    },
-    uglify: {
-      options: {
-        // the banner is inserted at the top of the output
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-      },
-      dist: {
-        files: {
-          'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
-        }
-      }
-    },
+    // concat: {
+    //   options: {
+    //     separator: ';'
+    //   },
+    //   dist: {
+    //     src: ['js/**/*.js'],
+    //     dest: 'dist/js/<%= pkg.name %>.js'
+    //   }
+    // },
     imagemin: {
-      dynamic: {                         // Another target
+      dynamic: {
         files: [{
-          expand: true,                  // Enable dynamic expansion
-          src: ['img/*.{png,jpg,gif}'],   // Actual patterns to match
-          dest: 'dist/'                  // Destination path prefix
+          expand: true,
+          src: ['img/*.{png,jpg,gif}'],
+          dest: 'dist/'
         }]
       }
     },
@@ -64,20 +53,15 @@ module.exports = function(grunt) {
       minify: {
         expand: true,
         cwd: 'dist/css/',
-        src: ['*.css', '!*.min.css'],
-        dest: 'dist/css/',
-        ext: '.min.css'
+        src: ['*.css', '*.min.css'],
+        dest: 'dist/css'
       }
     },
-    // // Remove unused CSS across multiple files, compressing the final output
     // uncss: {
     //   dist: {
-    //     files: [
-    //       { src: '*.html', dest: 'dist/css/compiled.min.css'}
-    //     ]
-    //   },
-    //   options: {
-    //     compress:true
+    //     files: {
+    //       'dist/css/tidymin.css': ['dist/index.html']
+    //     }
     //   }
     // },
     processhtml: {
@@ -87,9 +71,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
-    // grunt-contrib-connect will serve the files of the project
-    // on specified port and hostname
     connect: {
       all: {
         options:{
@@ -113,9 +94,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
-
-    // grunt-open will open your browser at the project's URL
     open: {
       all: {
         // Gets the port from the connect configuration
@@ -134,30 +112,27 @@ module.exports = function(grunt) {
   });
 
   // Creates the 'server' task
-  grunt.registerTask('serve',['livereload-start', 'connect', 'open', 'regarde']);
+  grunt.registerTask('serve',[
+    'livereload-start',
+    'connect',
+    'open',
+    'regarde'
+  ]);
 
-  // grunt.registerTask('serve', function (target) {
-  //   if (target === 'dist') {
-  //     console.log('tried dist');
-  //     return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
-  //   }
-  //   grunt.task.run([
-  //     'livereload-start',
-  //     'connect',
-  //     'open',
-  //     'regarde'
-  //   ]);
-  // });
-
-  // Andrew's 'build' task
+  // Creates the 'build' task
   grunt.registerTask('build', [
     'clean:dist',
     'copy',
-    // 'concat',
-    // 'imagemin', // dis works
+    'imagemin',
     'processhtml',
     'cssmin',
-    // 'uncss',
-    // 'uglify'
+    // 'concat',
   ]);
+
+  grunt.registerTask('sadie', [
+
+  ]);
+
+
+
 };
