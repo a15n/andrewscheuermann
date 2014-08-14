@@ -1,10 +1,10 @@
 Personal Site
 =========
-This is [my personal site](http://andrewscheuermann.com/). I'm pretty awesome.
+This is [my personal site](http://andrewscheuermann.herokuapp.com/). I'm pretty awesome.
 
 Primary Features
 ---------
-* **Parallax Scrolling**: The landing page features parallax scrolling and is a visual representation of my resume and the story of how I became a software engineer. Big credit to [Petr Tichy](http://ihatetomatoes.net/simple-parallax-scrolling-tutorial/) for the parallax scrolling tutorial.
+* **Parallax Scrolling**: The landing page features parallax scrolling and is a visual representation of my resume and the story of how I became a software engineer. Big thank you to [Petr Tichy](http://ihatetomatoes.net/simple-parallax-scrolling-tutorial/) for the parallax scrolling tutorial.
 ```
 <!-- HTML -->
 <section id="slide-7" class="homeSlide">
@@ -35,7 +35,7 @@ Primary Features
   left: 5%;
 }
 ```
-* **Optimized Client-Side Performance**: After initially building the site I used [Grunt](http://gruntjs.com/) and [Image Optimizer](http://www.imageoptimizer.net/Pages/Home.aspx) to reduce the page size from 14.0MB to 4.6MB **(a 67% reduction)** and decrease the load time from 6 seconds to 2.5 seconds **(a 58% reduction)**, both measurements were taken before caching and with one Heroku dyno running. Screenshots of the before and after network tabs are included below. I personally crafted my `grunt build` process and have also included that code below.
+* **Optimized Client-Side Performance**: After initially building the site I used [Grunt](http://gruntjs.com/) and [Image Optimizer](http://www.imageoptimizer.net/Pages/Home.aspx) to reduce the page size from 14.0MB to 4.6MB **(a 67% reduction)** and decrease the load time from 6.0 seconds to 2.5 seconds **(a 58% reduction)**, both measurements were taken before caching and with one Heroku dyno running. Screenshots of the before and after network tabs are included below. I personally crafted my `grunt build` process and have also included that code below.
 ![](/README/before.png?raw=true)
 ![](/README/after.png?raw=true)
 ```
