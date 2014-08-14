@@ -66,7 +66,7 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            src: ['**', '!**/node_modules/**', '!**/dist/**', '!Gruntfile.js', '!README.md', '!TODO.md'],
+            src: ['**', '!**/node_modules/**', '!**/dist/**', '!Gruntfile.js', '!README.md', '!TODO.md', '!README'],
             dest: 'dist/'
           },
         ]
