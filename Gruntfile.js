@@ -5,6 +5,8 @@ module.exports = function(grunt) {
   // Load Grunt tasks declared in the package.json file
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
+  require('time-grunt')(grunt);
+
   // Configure Grunt
   grunt.initConfig({
 

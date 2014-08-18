@@ -25,7 +25,8 @@
     "grunt-regarde": "^0.1.1",
     "grunt-uncss": "^0.3.5",
     "logfmt": "^1.1.2",
-    "matchdep": "^0.1.1"
+    "matchdep": "^0.1.1",
+    "time-grunt": "^0.4.0"
   },
   "engines": {
     "node": "^0.10.28"
