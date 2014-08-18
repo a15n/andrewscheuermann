@@ -5,8 +5,8 @@ This is [my personal site](http://andrewscheuermann.herokuapp.com/).
 Primary Features
 ---------
 * **Optimized Client-Side Performance**: After initially building the site I used [Grunt](http://gruntjs.com/) and [Image Optimizer](http://www.imageoptimizer.net/Pages/Home.aspx) to reduce the page size from 14.0MB to 4.6MB **(a 67% reduction)** and decrease the load time from 6.0 seconds to 2.5 seconds **(a 58% reduction)**, both measurements were taken before caching and with one Heroku dyno running. Screenshots of the before and after network tabs are included below. I personally crafted my `grunt build` process and have also included that code below.
-![](/README/before.png?raw=true)
-![](/README/after.png?raw=true)
+![](/assets/before.png?raw=true)
+![](/assets/after.png?raw=true)
 ```
 'use strict';
 
