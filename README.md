@@ -171,32 +171,43 @@ module.exports = function(grunt) {
 * **Parallax Scrolling**: The landing page features parallax scrolling and is a visual representation of my resume and the story of how I became a software engineer. Big thank you to [Petr Tichy](http://ihatetomatoes.net/simple-parallax-scrolling-tutorial/) for the parallax scrolling tutorial.
 ```
 <!-- HTML -->
-<section id="slide-7" class="homeSlide">
-	<div class="bcg"
-		data-top-bottom="background-position: 50% -100px;"
-		data-bottom-top="background-position: 50% 100px;"
-		data-anchor-target="#slide-7"
-	>
-  	<div class="hsContainer">
-  		<div class="hsContent"
-  			data-center="opacity: 1"
-  			data-center-top="opacity: 0"
-  			data--100-bottom="opacity: 0;"
-  			data-anchor-target="#slide-7"
-  		>
-    		<h2>Studied at Fullstack Academy, a Javascript focused bootcamp in NYC</h2>
-  		</div>
-  	</div>
-	</div>
+<section id="slide-2" class="homeSlide">
+  <div class="bcg"
+    data-center="background-position: 50% 0px;"
+    data-top-bottom="background-position: 50% -100px;"
+    data-bottom-top="background-position: 50% 100px;"
+    data-anchor-target="#slide-2"
+  >
+    <div class="hsContainer">
+      <div class="row hsContent"
+      data-center="opacity: 2"
+      data-center-top="opacity: 0"
+      data--100-bottom="opacity: 0;"
+      data-anchor-target="#slide-2"
+      >
+        <div class="raleway page">
+          <span class="col col-sm-8 col-sm-offset-3">Undergrad in Management Strategy at BYU's Marriott School of Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 -----------------------------
 /* CSS */
-#slide-7 h2 {
+.page {
+  font-size: 50px;
+  line-height: 54px;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+#slide-2 .page {
   position: fixed;
-  top: 15%;
-  right: 40%;
-  bottom: 20%;
-  left: 5%;
+  top: 50%;
+  text-align: right;
 }
 ```
 

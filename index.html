@@ -125,11 +125,11 @@
         <div class="hsContainer">
           <div class="row hsContent" data-center="opacity: 1.5" data-center-top="opacity: 0" data--100-bottom="opacity: 0;" data-anchor-target="#slide-8">
 
-            <div class="final-page col col-xs-6 col-xs-offset-1" id="information">
+            <div class="final-page col col-sm-6 col-sm-offset-1" id="information">
               <p>I'm looking for a seat on a rocket ship! I'm a hard worker, creative, and passionate about programming. Let's build something together!</p>
               <hr>
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-xs-6">
                   <p>
                     <span class="underline">Social</span>
                     <br>
@@ -175,6 +175,11 @@
   <script src="js/_main.js"></script>
   <!-- /build -->
 
+  <script type="text/javascript">
+  if (screen.width <= 699) {
+    document.location = "mobile.html";
+  }
+  </script>
 
   <script>
   (function(i, s, o, g, r, a, m) {
