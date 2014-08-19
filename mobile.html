@@ -1,113 +1,63 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Demo</title>
+  <title>AS Home</title>
+
+  <!-- build:css css/mobile.css-->
+  <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/idangerous.swiper.css">
-  <style>
-/* Demo Styles */
-html {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 1.5;
-  position: relative;
-  height: 100%;
-}
-.swiper-container {
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  text-align: center;
-}
-.red-slide {
-  background: #ca4040;
-}
-.blue-slide {
-  background: #4390ee;
-}
-.orange-slide {
-  background: #ff8604;
-}
-.green-slide {
-  background: #49a430;
-}
-.pink-slide {
-  background: #973e76;
-}
-.swiper-slide .title {
-  font-style: italic;
-  font-size: 42px;
-  margin-top: 80px;
-  margin-bottom: 0;
-  line-height: 45px;
-}
-.pagination {
-  position: absolute;
-  z-index: 20;
-  left: 10px;
-  bottom: 10px;
-}
-.swiper-pagination-switch {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 8px;
-  background: #222;
-  margin-right: 5px;
-  opacity: 0.8;
-  border: 1px solid #fff;
-  cursor: pointer;
-}
-.swiper-visible-switch {
-  background: #aaa;
-}
-.swiper-active-switch {
-  background: #fff;
-}
-  </style>
+  <!-- /build -->
+
 </head>
+
 <body>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide red-slide">
-        <div class="title">Slide 1</div>
+      <div class="swiper-slide slide-1">
+        <div class="title">Hi! My name is Andrew Scheuermann and I'm a fullstack software engineer.
+          <span class="underline">Swipe right to see my story</span>
+        </div>
       </div>
-      <div class="swiper-slide blue-slide">
-        <div class="title">Slide 2</div>
+      <div class="swiper-slide slide-2">
+        <div class="title">Undergrad in Management Strategy at BYU's Marriott School of Management</div>
       </div>
-      <div class="swiper-slide orange-slide">
-        <div class="title">Slide 3</div>
+      <div class="swiper-slide slide-3">
+        <div class="title">Worked at the University Impact Fund in Salt Lake City for 1.5 years</div>
       </div>
-      <div class="swiper-slide green-slide">
-        <div class="title">Slide 4</div>
+      <div class="swiper-slide slide-4">
+        <div class="title">Consulted small businesses in Nairobi, Kenya for three months with Village Capital</div>
       </div>
-      <div class="swiper-slide pink-slide">
-        <div class="title">Slide 5</div>
+      <div class="swiper-slide slide-5">
+        <div class="title">Helped build Soko ('Etsy for Africa') as their Director of Finance &amp; Strategy for one year</div>
       </div>
-      <div class="swiper-slide red-slide">
-        <div class="title">Slide 6</div>
+      <div class="swiper-slide slide-6">
+        <div class="title">Went on a career spirit journey and fell in love with programming and San Francisco</div>
       </div>
-      <div class="swiper-slide blue-slide">
-        <div class="title">Slide 7</div>
+      <div class="swiper-slide slide-7">
+        <div class="title">Studied at Fullstack Academy, a Javascript focused bootcamp in NYC</div>
       </div>
-      <div class="swiper-slide orange-slide">
-        <div class="title">Slide 8</div>
+      <div class="swiper-slide slide-8">
+        <div class="title">I'm looking for a seat on a rocket ship! I'm a hard worker, creative, and passionate about programming. Let's build something together!</div>
       </div>
     </div>
     <div class="pagination"></div>
   </div>
+
+
+  <!-- build:js js/mobile.js -->
   <script src="js/jquery.min.js"></script>
   <script src="js/idangerous.swiper.min.js"></script>
+  <!-- /build -->
 
-  <script>
-  var mySwiper = new Swiper('.swiper-container',{
+  <script type="text/javascript">
+  var mySwiper = new Swiper('.swiper-container', {
     pagination: '.pagination',
     paginationClickable: true
   })
   </script>
+
 </body>
+
 </html>

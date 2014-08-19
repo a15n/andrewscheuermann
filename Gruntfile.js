@@ -27,17 +27,21 @@ module.exports = function(grunt) {
             'dist/css/bootstrap.css',
             'dist/css/main.css',
             'dist/css/normalize.css',
+            'dist/css/idangerous.swiper.css',
             'dist/js/vendor',
             'dist/js/_main.js',
             'dist/js/enquire.min.js',
             'dist/js/imagesloaded.js',
             'dist/js/skrollr.js',
+            'dist/js/jquery.min.js',
+            'dist/js/idangerous.swiper.js',
+            'dist/js/idangerous.swiper.min.js',
           ]
         }]
       }
     },
     concat: {
-      dist: {
+      index: {
         src: [
           'js/vendor/jquery-1.9.1.min.js',
           'js/vendor/modernizr-2.7.1.min.js',
@@ -47,6 +51,13 @@ module.exports = function(grunt) {
           'js/_main.js'
         ],
         dest: 'dist/js/final.js'
+      },
+      mobile: {
+        src: [
+          'js/idangerous.swiper.min.js',
+          'js/jquery.min.js'
+        ],
+        dest: 'dist/js/mobile.js'
       }
     },
     connect: {
@@ -68,7 +79,7 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            src: ['**', '!**/node_modules/**', '!**/dist/**', '!Gruntfile.js', '!README.md', '!TODO.md', '!README'],
+            src: ['**', '!**/assets/**', '!**/Swiper/**', '!**/node_modules/**', '!**/dist/**', '!Gruntfile.js', '!README.md', '!TODO.md'],
             dest: 'dist/'
           },
         ]
@@ -77,7 +88,8 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          'dist/css/tidymin.css': ['dist/css/bootstrap.css', 'dist/css/normalize.css', 'dist/css/main.css']
+          'dist/css/tidymin.css': ['dist/css/bootstrap.css', 'dist/css/normalize.css', 'dist/css/main.css'],
+          'dist/css/mobile.css': ['dist/css/idangerous.swiper.css', 'dist/css/mobile.css']
         }
       }
     },
@@ -126,14 +138,16 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'dist/js/final.js': ['dist/js/final.js']
+          'dist/js/final.js': ['dist/js/final.js'],
+          'dist/js/mobile.js': ['dist/js/mobile.js']
         }
       }
     },
     uncss: {
       dist: {
         files: {
-          'dist/css/tidymin.css': ['dist/index.html']
+          'dist/css/tidymin.css': ['dist/index.html'],
+          'dist/css/mobile.css': ['dist/mobile.html'],
         }
       }
     }
@@ -162,6 +176,15 @@ module.exports = function(grunt) {
 
   // Creates the 'test' task
   grunt.registerTask('test', [
+    // 'clean:begin',
+    // 'copy',
+    // 'imagemin',
+    // 'uncss',
+    // 'cssmin',
+    // 'processhtml',
+    // 'concat',
+    // 'htmlmin',
+    'clean:end'
 
   ]);
 
