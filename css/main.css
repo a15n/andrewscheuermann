@@ -122,13 +122,17 @@ main {
     margin-top: 20px;
     margin-bottom: 10px;
     font-weight: 500;
-    background-color: red;
+    -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box;    /* Firefox, other Gecko */
+    box-sizing: content-box;
   }
   .final-page {
     font-size: 40px;
     line-height: 44px;
     font-weight: 200;
-    background-color: red;
+    -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box;    /* Firefox, other Gecko */
+    box-sizing: content-box;
   }
   .underline {
     text-decoration: underline;
@@ -140,56 +144,64 @@ main {
   }
   #slide-2 .page {
     position: fixed;
-    top: 60%;
-    right: 5%;
-    bottom: 20%;
-    left: 25%;
+    top: 50%;
     text-align: right;
   }
   #slide-3 .page {
     position: fixed;
     top: 40%;
-    right: 5%;
-    bottom: 40%;
-    left: 40%;
     text-align: right;
   }
   #slide-4 .page {
     position: fixed;
-    top: 66%;
-    right: 10%;
-    bottom: 30%;
-    left: 5%;
-    text-align: left;
+    top: 60%;
+    text-align: center;
   }
   #slide-5 .page {
     position: fixed;
-    top: 61%;
-    right: 5%;
-    bottom: 30%;
-    left: 30%;
+    top: 50%;
     text-align: right;
   }
   #slide-6 .page {
     position: fixed;
-    top: 66%;
-    right: 15%;
-    bottom: 30%;
-    left: 5%;
-    text-align: left;
+    top: 60%;
+    text-align: center;
   }
   #slide-7 .page {
     position: fixed;
     top: 15%;
-    right: 40%;
-    bottom: 20%;
-    left: 5%;
   }
   #slide-8 #information {
     position: fixed;
     top: 5%;
-    right: 0;
-    bottom: 10%;
-    left: 0;
+  }
+}
+
+/* Medium devices (tablets, 767px and below) */
+@media only screen and (max-width: 767px) {
+/*text CSS*/
+  .page {
+    font-size: 20px;
+    line-height: 24px;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box;    /* Firefox, other Gecko */
+    box-sizing: content-box;
+    background-color: rgba(0,0,0,0.5);
+  }
+  .final-page {
+    font-size: 20px;
+    line-height: 24px;
+
+    -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box;    /* Firefox, other Gecko */
+    box-sizing: content-box;
+    background-color: rgba(0,0,0,0.5);
+  }
+  .underline {
+    text-decoration: underline;
   }
 }
