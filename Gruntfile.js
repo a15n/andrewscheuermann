@@ -90,7 +90,8 @@ module.exports = function(grunt) {
           minifyJS: true
         },
         files: {
-          'dist/index.html': 'dist/index.html'
+          'dist/index.html': 'dist/index.html',
+          'dist/mobile.html': 'dist/mobile.html'
         }
       }
     },
@@ -111,13 +112,14 @@ module.exports = function(grunt) {
     processhtml: {
       dist: {
         files: {
-          'dist/index.html': ['index.html']
+          'dist/index.html': ['index.html'],
+          'dist/mobile.html': ['mobile.html']
         }
       }
     },
     regarde: {
       all: {
-        files:['index.html', 'css/**/*.css', 'js/**/*.js'],
+        files:['index.html', 'mobile.html', 'css/**/*.css', 'js/**/*.js'],
         tasks: ['livereload']
       }
     },

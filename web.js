@@ -16,6 +16,10 @@ app.get('/', function(req, res){
   res.sendfile('index.html');
 });
 
+app.get('/mobile.html', function(req, res){
+  res.sendfile('mobile.html');
+});
+
 app.get('*', function(req, res){
   res.sendfile('404.html');
 });
