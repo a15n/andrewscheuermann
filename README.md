@@ -211,3 +211,5 @@ module.exports = function(grunt) {
 }
 ```
 
+* Thanks to [FairheadCreative](http://fairheadcreative.com) for the social media icons
+

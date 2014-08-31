@@ -84,8 +84,10 @@ main {
 #slide-8 .bcg {
   background-image: url('../img/bcg_slide-8.jpg');
 }
+.social {
+  display: inline !important;
+}
 /* Medium devices (tablets, 768px and up) */
-
 @media only screen and (min-width: 768px) {
   body, html {
     height: auto;
@@ -130,8 +132,8 @@ main {
     box-sizing: content-box;
   }
   .final-page {
-    font-size: 40px;
-    line-height: 44px;
+    font-size: 34px;
+    line-height: 36px;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
@@ -229,12 +231,22 @@ main {
   line-height: 18px;
   color: #ffffff;
   -webkit-box-sizing: content-box;
-  /* Safari/Chrome, other WebKit */
   -moz-box-sizing: content-box;
-  /* Firefox, other Gecko */
   box-sizing: content-box;
   background-color: rgba(0, 0, 0, 0.5);
   border: 0 solid black;
   border-radius: 5px;
   padding: 15px;
+}
+
+.social img {
+  width: 50px;
+  height: 50px;
+  margin: 15px 5px;
+}
+
+.columns {
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  columns: 2;
 }

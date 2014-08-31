@@ -1,4 +1,5 @@
 /* preloads all image to allow portrait to landscape changes, vice versa */
+
 .preload {
   width: 1px;
   height: 1px;
@@ -7,8 +8,8 @@
   top: 0;
   left: 0;
 }
-
 /* portrait orientation photos */
+
 @media all and (orientation: portrait) {
   .slide-1 {
     background-image: url('../img/p/bcg_slide-1.jpg');
@@ -35,7 +36,6 @@
     background-image: url('../img/p/bcg_slide-8.jpg');
   }
 }
-
 @media all and (orientation: landscape) {
   .slide-1 {
     background-image: url('../img/l/bcg_slide-1.jpg');
@@ -93,14 +93,49 @@ body {
 .title {
   font-style: italic;
   font-size: 42px;
+  line-height: 45px;
   margin-top: 80px;
   margin-bottom: 0;
-  line-height: 45px;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
+  padding: 10px;
+}
+
+.portfolio {
+  font-style: italic;
+  font-size: 30px;
+  line-height: 32px;
+  background-color: none;
 }
 .underline {
+  color: black;
   text-decoration: underline;
+}
+ul {
+  list-style-type: none;
+  text-align: left;
+}
+.column-left {
+  float: left;
+  width: 33%;
+}
+.column-center {
+  display: inline-block;
+  width: 33%;
+}
+.column-right {
+  float: right;
+  width: 33%;
+  color: rgba(0,0,0,0);
+}
+.column-two {
+  float: left;
+  width: 66%;
+}
+li {
+  color: #2A6496;
+}
+a {
+  text-decoration: none;
 }
 .pagination {
   position: absolute;
