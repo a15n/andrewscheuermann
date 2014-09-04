@@ -242,11 +242,16 @@ main {
 .social img {
   width: 50px;
   height: 50px;
-  margin: 15px 5px;
+  margin: 15px 10px 15px 0;
 }
 
 .columns {
+  margin-top: 0;
   -webkit-columns: 2;
   -moz-columns: 2;
   columns: 2;
+}
+
+p {
+  margin: 0 0 0 !important;
 }
